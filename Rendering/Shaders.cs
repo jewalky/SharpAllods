@@ -155,7 +155,7 @@ namespace SharpAllods.Rendering
                     string log = GL.GetShaderInfoLog(shader_vx);
                     GL.DeleteShader(shader_vx);
                     Console.WriteLine(" ! Compilation failed:\n{0}\n", log);
-                    Core.Abort("Failed to compile vertex shader from \"{0}\"", FileName);
+                    Core.Abort("Failed to compile vertex shader from \"{0}\"\n{1}", FileName, log);
                     return;
                 }
 
@@ -171,7 +171,7 @@ namespace SharpAllods.Rendering
                     GL.DeleteShader(shader_fr);
                     GL.DeleteShader(shader_vx);
                     Console.WriteLine(" ! Compilation failed:\n{0}\n", log);
-                    Core.Abort("Failed to compile fragment shader from \"{0}\"", FileName);
+                    Core.Abort("Failed to compile fragment shader from \"{0}\"\n{1}", FileName, log);
                     return;
                 }
 
@@ -191,7 +191,7 @@ namespace SharpAllods.Rendering
                     GL.DeleteShader(shader_vx);
                     ShaderGL = 0;
                     Console.WriteLine(" ! Linking failed:\n{0}\n", log);
-                    Core.Abort("Failed to link shader program from \"{0}\"", FileName);
+                    Core.Abort("Failed to link shader program from \"{0}\"\n{1}", FileName, log);
                     return;
                 }
 
