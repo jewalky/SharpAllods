@@ -73,7 +73,7 @@ namespace SharpAllods
                     return 0;
                 }
 
-                string[] glver = GL.GetString(StringName.Version).Split('.');
+                string[] glver = GL.GetString(StringName.Version).Split(' ')[0].Split('.');
                 uint ver_major = uint.Parse(glver[0]);
                 uint ver_minor = (glver.Length > 1) ? uint.Parse(glver[1]) : 0;
                 uint ver_ll = (glver.Length > 2) ? uint.Parse(glver[2]) : 0;
@@ -120,7 +120,6 @@ namespace SharpAllods
 
             Window = new GameWindow(w, h, new GraphicsMode(new ColorFormat(32)), "SharpAllods", (fs ? GameWindowFlags.Fullscreen : 0) | GameWindowFlags.FixedWindow, DisplayDevice.Default, 2, 1, GraphicsContextFlags.Default);
 
-            Console.WriteLine(" * Raw GL context version is {0}.", GL.GetString(StringName.Version));
             Console.WriteLine(" * GL context version {0} is available.", GLVersionString);
             if (GLVersion < 0x02010000)
             {
