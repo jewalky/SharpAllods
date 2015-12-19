@@ -1,5 +1,6 @@
 #include shaders/vertex.ash
 #shader fragment
+meow
 #extension GL_ARB_texture_rectangle : enable
 
 uniform sampler2DRect texture1;
