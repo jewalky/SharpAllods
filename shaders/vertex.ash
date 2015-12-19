@@ -1,4 +1,5 @@
 #shader vertex
+#version 120
 
 uniform vec4 screen;
 uniform vec3 translate;
